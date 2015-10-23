@@ -5,6 +5,6 @@ Spree::TaxonsController.class_eval do
 
   def show
     old_show # Like calling super: http://stackoverflow.com/a/13806783/73673
-    @products = @products.send(sorting_scope)
+    @products = @products.reorder("").send(sorting_scope)
   end
 end
